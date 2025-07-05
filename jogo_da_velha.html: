@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jogo da Velha com IA</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            background-color: #2c3e50;
+        }
+        
+        .container {
+            text-align: center;
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0,0,0,0.1);
+        }
+        
+        h1 {
+            color: #34495e;
+            margin-bottom: 30px;
+        }
+        
+        .tabuleiro {
+            display: grid;
+            grid-template-columns: repeat(3, 100px);
+            grid-gap: 5px;
+            margin: 20px auto;
+            background: #34495e;
+            padding: 5px;
+        }
+        
+        .celula {
+            width: 100px;
+            height: 100px;
+            background: white;
+            border: none;
+            font-size: 36px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+        
+        .celula:hover {
+            background: #ecf0f1;
+        }
+        
+        .celula:disabled {
+            cursor: not-allowed;
+        }
+        
+        .X {
+            color: #3498db;
+        }
+        
+        .O {
+            color: #e74c3c;
+        }
+        
+        .mensagem {
+            margin: 20px 0;
+            font-size: 20px;
+            color: #27ae60;
+            height: 30px;
+        }
+        
+        .reiniciar {
+            background: #3498db;
+            color: white;
+            border: none;
+            padding: 10px 30px;
+            font-size: 16px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+        
+        .reiniciar:hover {
+            background: #2980b9;
+        }
+        
+        .placar {
+            margin: 20px 0;
+            font-size: 18px;
+        }
+        
+        .placar span {
+            margin: 0 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Jogo da Velha - Você vs IA</h1>
+        
+        <div class="placar">
+            <span class="X">Você (X): <span id="placarX">0</span></span>
+            <span class="O">IA (O): <span id="placarO">0</span></span>
+            <span>Empates: <span id="placarEmpate">0</span></span>
+        </div>
+        
+        <div class="tabuleiro" id="tabuleiro">
+            <button class="celula" data-linha="0" data-col
